@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>내 홈페이지</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <h1>내 홈페이지</h1>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#about">소개</a>
+      <a href="#contact">연락처</a>
+    </nav>
+    <button onclick="toggleDarkMode()">🌙</button>
+  </header>
+
+  <p id="counter"></p>
+
+  <section id="home">
+    <h2>홈</h2>
+    <p>환영합니다!</p>
+  </section>
+
+  <section id="about">
+    <h2>소개</h2>
+    <p>저는 웹 개발을 배우고 있습니다.</p>
+  </section>
+
+  <section id="contact">
+    <h2>연락처</h2>
+    <p>email@example.com</p>
+  </section>
+
+  <!-- 댓글 -->
+  <section id="comments">
+    <h2>댓글</h2>
+    <div class="input-group">
+      <input type="text" id="commentInput" placeholder="댓글을 입력하세요">
+      <button id="addCommentBtn">댓글 추가</button>
+    </div>
+    <ul id="commentList"></ul>
+  </section>
+
+  <main>
+    <img src="https://via.placeholder.com/150" alt="프로필" class="profile">
+    <h2>안녕하세요!</h2>
+    <p>저는 웹 개발을 배우고 있습니다 😄</p>
+    <button onclick="sayHello()">눌러보세요</button>
+    <main class="fade-in">😊반갑습니다😊</main>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

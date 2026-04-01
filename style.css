@@ -1,0 +1,300 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+}
+
+/* 헤더 */
+header {
+  display: flex;
+  justify-content: space-between; /* 좌우 정렬 */
+  align-items: center;
+  background: linear-gradient(135deg, #5d93c2, #7aacd8);
+  color: white;
+  padding: 20px 40px;
+}
+
+nav {
+  margin-top: 0; /* 기존 margin 제거 */
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* 메인 카드 */
+main {
+  max-width: 600px;
+  background: white;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* 버튼 */
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: #649ed1;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #007bff;
+  transform: scale(1.05);
+}
+
+.profile {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* 📱 모바일 (768px 이하) */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 10px;
+  }
+
+  main {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    width: auto; /* 전체폭 제거 */
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 입력창-버튼 사이 간격 */
+    width: 100%;
+  }
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 다크모드 */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark header {
+  background: #1f1f1f;
+}
+
+.dark main {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark button {
+  background: #333;
+}
+
+/* 처음엔 숨김 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* 보일 때 */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 다크모드 section */
+.dark section {
+  background: #676767;
+  color: white;
+}
+
+section {
+  padding: 100px 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark nav a {
+  color: #ddd;
+}
+
+.dark input {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+#comments { margin-top: 50px; }
+#commentList li { margin-bottom: 5px; }
+
+/* 전체 댓글 섹션 */
+#comments {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* 다크모드 배경 */
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* 스크롤 애니메이션 */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 스크롤 시 나타나도록 클래스 추가 */
+#comments.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 제목 */
+#comments h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #f0f0f0;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* 입력창 */
+#commentInput {
+    flex: 1; /* 남는 공간만 사용 */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* 버튼 */
+#comments button {
+    width: auto;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#comments button:hover {
+    background-color: #45a049;
+}
+
+/* 댓글 리스트 */
+#commentList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* 댓글 아이템 */
+#commentList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+}
+
+#commentList li:hover {
+    transform: translateX(5px);
+}
+
+/* 댓글 텍스트 */
+#commentList li span {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* 수정/삭제 버튼 */
+#commentList li button {
+    background-color: #2196f3;
+    margin-left: 5px;
+}
+
+#commentList li button:hover {
+    background-color: #1976d2;
+}
+
+/* 모바일 반응형 */
+@media screen and (max-width: 600px) {
+    #commentInput {
+        flex: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-sizing: border-box; /* ⭐ 필수 */
+    }
+
+    #comments button {
+        width: auto;
+        padding: 10px 15px;
+    }
+
+    #commentList li {
+        width: 100%;       /* 버튼 가로 꽉 채우기 */
+        margin: 5px 0 0 0; /* 위쪽 여백만 추가 */
+        padding: 12px 0;   /* 높이 증가 */
+        font-size: 16px;   /* 글씨 키우기 */
+    }
+
+    #commentList li button {
+        margin: 5px 0 0 0;
+    }
+}
